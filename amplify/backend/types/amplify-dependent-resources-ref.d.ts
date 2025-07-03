@@ -1,5 +1,24 @@
 export type AmplifyDependentResourcesAttributes = {
+  "api": {
+    "getUser": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
+    },
+    "postUser": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
+    }
+  },
   "function": {
+    "userGetter": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "userHandler": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
