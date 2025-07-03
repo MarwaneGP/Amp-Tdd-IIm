@@ -3,16 +3,19 @@ import boto3
 import uuid
 import os
 
-dynamodb = boto3.resource("dynamodb")
-table = dynamodb.Table(os.environ["STORAGE_USERTABLE_NAME"])
+# dynamodb = boto3.resource("dynamodb")
+# table = dynamodb.Table(os.environ["STORAGE_USERTABLE_NAME"])
+
+TABLE_NAME = os.environ.get("STORAGE_USERTABLE_NAME", "userTabel-dev")
+dynamodb = boto3.resource("dynamodb", region_name="eu-west-1")  
+table = dynamodb.Table(TABLE_NAME)
 
 def handler(event, context):
     print('Received event:')
     print(event)
 
     try:
-        body = json.loads(event.get("body", "{}"))
-        email = body.get("email")
+        email = event.get("email", "{}")
 
         if not email:
             return {
@@ -21,7 +24,7 @@ def handler(event, context):
             }
 
         user_id = str(uuid.uuid4())
-        table.put_item(Item={"user_id": user_id, "email": email})
+        table.put_item(Item={"userId": user_id, "email": email})
 
         return {
             "statusCode": 200,

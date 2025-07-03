@@ -15,19 +15,19 @@
       "function": {
         "userHandler": {
           "deploymentBucketName": "amplify-tddproject-dev-86371-deployment",
-          "s3Key": "amplify-builds/userHandler-4c384e58666362683957-build.zip"
+          "s3Key": "amplify-builds/userHandler-624c41784e5a516c7344-build.zip"
         },
         "userGetter": {
           "deploymentBucketName": "amplify-tddproject-dev-86371-deployment",
-          "s3Key": "amplify-builds/userGetter-4b467747745a33496f6f-build.zip"
+          "s3Key": "amplify-builds/userGetter-76777a3269366c475365-build.zip"
         }
       },
       "storage": {
         "userTabel": {}
       },
       "api": {
-        "postUser": {},
-        "getUser": {}
+        "getUser": {},
+        "postUser": {}
       }
     }
   }
